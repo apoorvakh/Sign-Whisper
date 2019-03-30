@@ -11,6 +11,7 @@ def spconvert(fname):
     speech = tts(txt1, 'en')
     speech.save("spout.mp3")
     os.system('start spout.mp3')
+
 def translate_text(text, target = 'de'):
     translate_client = translate.Client()
     result = translate_client.translate(text, target_language = target)
