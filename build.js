@@ -150,8 +150,8 @@ var Main = function () {
       var div = document.getElementById("btn");
       div.innerHTML = "";
       var predButton = document.createElement('button');
-
-      predButton.innerText = "Start Predicting >>>";
+      predButton.className = 'btn waves-effect waves-light'
+      predButton.innerText = "Start Prediction >";
       div.appendChild(predButton);
 
       predButton.addEventListener('mousedown', function () {
@@ -197,7 +197,8 @@ var Main = function () {
       div.innerHTML = "";
 
       var trainButton = document.createElement('button');
-      trainButton.innerText = "Training >>>";
+      trainButton.className = 'btn waves-effect waves-light'
+      trainButton.innerText = "Train >";
       div.appendChild(trainButton);
 
       trainButton.addEventListener('mousedown', function () {
@@ -228,10 +229,10 @@ var Main = function () {
 
         _this4.createPredictBtn();
 
-        _this4.textLine.innerText = "Step 2: Train";
+        _this4.textLine.innerText = "Training";
 
         var subtext = document.createElement('span');
-        subtext.innerHTML = "<br/>Time to associate signs with the words";
+        subtext.innerHTML = "<br/><br/>";
         subtext.classList.add('subtext');
         _this4.textLine.appendChild(subtext);
       });
@@ -328,6 +329,7 @@ var Main = function () {
       if (showBtn) {
         // Create training button
         var button = document.createElement('button');
+        button.className = 'btn waves-effect waves-light';
         button.innerText = "Add Example"; //"Train " + words[i].toUpperCase()
         div.appendChild(button);
 
@@ -339,8 +341,9 @@ var Main = function () {
           return _this7.training = -1;
         });
 
-        // Create clear button to emove training examples
+        // Create clear button to remove training examples
         var btn = document.createElement('button');
+        btn.className = 'btn waves-effect waves-light';
         btn.innerText = "Clear"; //`Clear ${words[i].toUpperCase()}`
         div.appendChild(btn);
 
