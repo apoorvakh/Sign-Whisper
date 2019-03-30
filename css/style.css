@@ -8,13 +8,13 @@ body{
     -webkit-transform:rotateY(180deg); /* Safari and Chrome */
     -moz-transform:rotateY(180deg); /* Firefox */
     position: absolute;
-    left: 40%;
-    top:20%;
+    left: 49%;
+    top:32%;
     z-index: 10;
     background-color: black;
     border: 8px solid black;
     border-radius: 5px;
-    width: 750px;
+    width: 438px;
 }
 input[type="text"] {           
     /* Firefox, Chrome, Opera */ 
@@ -79,7 +79,6 @@ h4{
 }
 
 #add-word{
-    padding: 10px;
     font-size: 12px;
 }
 

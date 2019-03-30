@@ -24,7 +24,7 @@ var TOPK = 10;
 
 var predictionThreshold = 0.98;
 
-var words = ["google", "hi", "any"];
+var words = ["Google", "hi", "any"];
 // var words = ["google", "hello", "what is", "the weather", "the time",
 //"add","eggs","to the list","five","feet","in meters","tell me","a joke", "bye", "other"]
 
@@ -222,7 +222,9 @@ var Main = function () {
         _this4.createButtonList(true);
         _this4.addWordForm.innerHTML = '';
         var p = document.createElement('p');
-        p.innerText = 'Perform the appropriate sign while holding down the ADD EXAMPLE button near each word to capture atleast 30 training examples for each word\n\n      For OTHER, capture yourself in an idle state to act as a catchall sign. e.g hands down by your side';
+        p.innerText = 'Capture atleast 30 training examples for each word \n  ANY is an idle state indentifier';
+        p.style.fontSize = '13px';
+        p.style.lineHeight = '25px';
         _this4.addWordForm.appendChild(p);
 
         _this4.loadKNN();
@@ -232,7 +234,7 @@ var Main = function () {
         _this4.textLine.innerText = "Training";
 
         var subtext = document.createElement('span');
-        subtext.innerHTML = "<br/><br/>";
+        subtext.innerHTML = "<br/>";
         subtext.classList.add('subtext');
         _this4.textLine.appendChild(subtext);
       });
@@ -263,6 +265,7 @@ var Main = function () {
         _this5.video.srcObject = stream;
         _this5.video.width = IMAGE_SIZE;
         _this5.video.height = IMAGE_SIZE;
+        _this5.video.top = '35%';
 
         _this5.video.addEventListener('playing', function () {
           return _this5.videoPlaying = true;
@@ -328,10 +331,19 @@ var Main = function () {
 
       if (showBtn) {
         // Create training button
+        var tbl = document.createElement('table');
+        tbl.style.width = '100%';
+        var tbdy = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
         var button = document.createElement('button');
-        button.className = 'btn waves-effect waves-light';
+        button.className = 'btn-small waves-effect waves-light';
         button.innerText = "Add Example"; //"Train " + words[i].toUpperCase()
-        div.appendChild(button);
+        td.appendChild(button)
+        tr.appendChild(td)
+        /*tbdy.appendChild(tr);
+        tbl.appendChild(tbdy);
+        div.appendChild(tbl); */
 
         // Listen for mouse events when clicking the button
         button.addEventListener('mousedown', function () {
@@ -342,10 +354,13 @@ var Main = function () {
         });
 
         // Create clear button to remove training examples
+        
+        var td = document.createElement('td');
         var btn = document.createElement('button');
-        btn.className = 'btn waves-effect waves-light';
+        btn.className = 'btn-small waves-effect waves-light';
         btn.innerText = "Clear"; //`Clear ${words[i].toUpperCase()}`
-        div.appendChild(btn);
+        td.appendChild(btn);
+        tr.appendChild(td);
 
         btn.addEventListener('mousedown', function () {
           console.log("clear training data for this label");
@@ -354,9 +369,14 @@ var Main = function () {
         });
 
         // Create info text
+        var td = document.createElement('td');
         var infoText = document.createElement('span');
         infoText.innerText = " 0 examples";
-        div.appendChild(infoText);
+        td.appendChild(infoText)
+        tr.appendChild(td)
+        tbdy.appendChild(tr);
+        tbl.appendChild(tbdy);
+        div.appendChild(tbl);
         this.infoTexts.push(infoText);
       }
     }
@@ -416,7 +436,8 @@ var Main = function () {
         this.stopTraining();
       }
 
-      document.getElementById("status").style.background = "deepskyblue";
+      document.getElementById("status").style.background = "#00ff2a";
+      document.getElementById("status").style.color = "#000000";
       this.setStatusText("Status: Ready!");
 
       this.video.play();
@@ -542,7 +563,7 @@ var TextToSpeech = function () {
     value: function speak(word) {
       var _this10 = this;
 
-      if (word == 'google') {
+      if (word == 'Google') {
         console.log("clear para");
         this.clearPara(true);
 
@@ -554,8 +575,8 @@ var TextToSpeech = function () {
         }, this.waitTimeForQuery);
       }
 
-      if (word != 'google' && this.currentPredictedWords.length == 0) {
-        console.log("first word should be google");
+      if (word != 'Google' && this.currentPredictedWords.length == 0) {
+        console.log("first word should be Google");
         console.log(word);
         return;
       }
@@ -605,7 +626,7 @@ var TextToSpeech = function () {
   return TextToSpeech;
 }();
 
-var SpeechToText = function () {
+/* var SpeechToText = function () {
   function SpeechToText() {
     var _this11 = this;
 
@@ -720,7 +741,7 @@ var SpeechToText = function () {
 
   return SpeechToText;
 }();
-
+ */
 var main = null;
 
 window.addEventListener('load', function () {
