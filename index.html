@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Language Translator</title>
-    <!--<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="dist/build.js"></script> 
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign-Whisper</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <script src="build.js"></script>
 </head>
+
 <body>
 
-  
   <!-- The Modal -->
-  <div id="launchModal" class="modal">
+  <div id="launchModal" class="modal1">
     <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
         <span id="close-modal">&times;</span>
-        <h2>Hey there! Welcome to "Sign-Whisper"</h2>
+        <h2 style="font-size: 27px;">Welcome to Sign-Whisper!</h2>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="line-height: 30px;">
         <p>This project is an experiment that uses Transfer Learning and your webcam to make Google Cloud Platform voice your sign language</p>
       </div>
     </div>
   </div>
-
+  <div id="title">
+    <h2 id="title-text" style="font-size: 34px;">Sign-Whisper</h2>
+  </div>
   <div id="status">
-    <p id="status-text">Status: Not Ready</p>
+    <p id="status-text">Status : Not Ready</p>
   </div>
   <video id="video" src='' muted autoplay playsinline></video>
   <div class="split-left">
     <div class="centered">
-      <h1 id="text" class="intro-steps">Step 1: Enter Words<br><span class="subtext">Add a few words below. In the next step we'll associate each word with signs from the webcam</h1>
+      <h2 id="text" class="intro-steps">Enter Words to Train</h2>
       <div id="training-list">
         <div id="example-list"></div>
         <div id="add">
           <form id="add-word" autocomplete="off">
-              <select id="x">
-                  <option default>Choose Language</option>
-                  <option value="En-GB">EN-GB</option>
-                  <option value="FR">FR</option>
-                      <option value="DE">DE</option>
-                      <option value="ZH">ZH</option>
-                          </select>
-                
+            <select id="x">
+              <option default>Choose Language</option>
+              <option value="En-GB">EN-GB</option>
+              <option value="FR">FR</option>
+              <option value="DE">DE</option>
+              <option value="ZH">ZH</option>
+            </select>
+            <div id="hidecoltext"><br /></div>
             <input lang type="text" id="new-word" placeholder="Add Training word">
-            <br/><br/>
+            <br /><br />
             <label>
-              <input type="checkbox" id="is-terminal-word">
-              Is terminal word?
+              <input type="checkbox" class="filled-in" id="is-terminal-word">
+              <span style="color:black;">Is Terminal Word?</span>
             </label>
-            <br/><br/>
-            <input type="submit" value="Add Word">
-            <p><b>Terminal Word</b> - A word that appears as the last word in your query</p>
+            <br /><br />
+            <input class="waves-effect waves-light btn" type="submit" value="Add Word">
+            <br><br>
+            <h4><b>Terminal Word</b></h4>
+            <h4>A word that appears as the last word in your query</h4>
           </form>
         </div>
         <p id="count">Training: 2 words</p>
-        <div id="action-btn"></div>
+        <div id="btn"></div>
       </div>
-      
     </div>
   </div>
   <div class="split-right">
@@ -73,9 +76,6 @@
       </h1>
     </div>
   </div>
-  
-  
-  
 
 </body>
 </html>

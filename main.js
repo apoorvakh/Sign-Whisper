@@ -502,12 +502,12 @@ class TextToSpeech{
 
   speak(word){
 
-    if(word == 'alexa'){
+    if(word == 'google'){
       console.log("clear para")
       this.clearPara(true);
 
       setTimeout(() => {
-        // if no query detected after alexa is signed
+        // if no query detected after google is signed
         if(this.currentPredictedWords.length == 1){
           this.clearPara(false)
         }

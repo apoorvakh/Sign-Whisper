@@ -1,5 +1,4 @@
 body{
-    font-family: "Helvetica Neue", "sans-serif";
     margin: 0;
     padding: 0;
 }
@@ -17,21 +16,42 @@ body{
     border-radius: 5px;
     width: 750px;
 }
+input[type="text"] {           
+    /* Firefox, Chrome, Opera */ 
+    text-align: center; 
+    z-index: 0;
+} 
 
+#hidecoltext {
+    background-color: white;
+    width: 2px;
+    padding-top: 27px;
+    z-index: 10; 
+    position: absolute;
+    margin-left: -1px;
+}
+#title{
+    width: 100%;
+    position: absolute;
+    z-index: 40;
+    color: #ff0000;
+    text-align: center;
+}
 #status{
-    width: 300px;
+    width: 200px;
     height: 50px;
-    background: red;
     position: absolute;
     z-index: 30;
-    top: 0;
+    background-color: #fe0000;
+    color: white;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    border:7px solid black;
-    border-top: none;
+    border:2px solid black;
+    border-bottom: none;
     text-align: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 [lang="en-GB"]::before {
     content: url('/media/examples/british-flag.png');
@@ -41,23 +61,17 @@ body{
     content: url('/media/examples/french-flag.png');
 }
 
-#status p{
-    color: white;
-    font-weight: bold;
-}
-
-h1 {
-    font-family: 'Baloo Bhaina', "Helvetica Neue", "sans-serif";
-    font-size: 80px;
-    font-weight: bold;
+h2 {
+    /*font-size: 80px;*/
+    font-weight: lighter;
     line-height: 100%;
 }
 
-h1 .subtext {
-    font-family: "Helvetica Neue", "sans-serif";
-    font-size:14px;
-    font-weight: normal;
-    line-height: 16px;
+h4{
+    font-size: 15px;
+    text-align: center;
+    line-height: 10px;
+
 }
 
 .intro-steps {
@@ -65,7 +79,6 @@ h1 .subtext {
 }
 
 #add-word{
-    border:1px solid #333;
     padding: 10px;
     font-size: 12px;
 }
@@ -74,15 +87,14 @@ h1 .subtext {
     text-align: center;
     height: 100%;
     left:0;
-    width: 35%;
+    width: 38.5%;
     position: fixed;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-right: 5px solid black;
-    background:skyblue;
+    background:#ffffff;
 }
 
 .split-left h1{
@@ -100,7 +112,7 @@ h1 .subtext {
     padding-top: 20px;
     right:0;
     padding-bottom: 20px;
-    border-left: 5px solid black;
+    border-left: 0px solid black;
     background: white;
 }
 
@@ -181,7 +193,7 @@ h1 .subtext {
 }
 
 /* The Modal (background) */
-.modal {
+.modal1 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -191,13 +203,13 @@ h1 .subtext {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: #ffffff; /* Black w/ opacity */
 }
 
 /* Modal Header */
 .modal-header {
-    padding: 2px 16px;
-    background-color: deepskyblue;
+    padding: 2px 10px;
+    background-color: rgb(255, 0, 0);
     color: white;
 }
 
@@ -219,17 +231,17 @@ h1 .subtext {
     padding: 0;
     border: 1px solid #888;
     width: 40%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 12px 8px rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
-    animation-duration: 0.4s;
-    top: 10%;
+    animation-duration: 0.7s;
+    top: 30%;
     text-align: center;
 }
 
 /* Add Animation */
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
-    to {top: 10%; opacity: 1}
+    to {top: 30%; opacity: 1}
 }
 
 /* The Close Button */

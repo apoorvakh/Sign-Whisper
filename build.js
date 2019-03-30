@@ -147,7 +147,7 @@ var Main = function () {
     value: function createPredictBtn() {
       var _this3 = this;
 
-      var div = document.getElementById("action-btn");
+      var div = document.getElementById("btn");
       div.innerHTML = "";
       var predButton = document.createElement('button');
 
@@ -193,7 +193,7 @@ var Main = function () {
     value: function createTrainingBtn() {
       var _this4 = this;
 
-      var div = document.getElementById("action-btn");
+      var div = document.getElementById("btn");
       div.innerHTML = "";
 
       var trainButton = document.createElement('button');
